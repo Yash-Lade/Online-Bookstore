@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "bookstore/asgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "bookstore/asgi.py"
+    }
+  ]
+}
