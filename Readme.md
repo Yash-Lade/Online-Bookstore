@@ -51,7 +51,8 @@
 - Django
 - Django REST Framework
 - SimpleJWT (JWT Authentication)
-- SQLite (Development DB)
+- PostgreSQL (Development DB)
+- Vercel (Deployment)
 
 ```
 📂 Project Structure
