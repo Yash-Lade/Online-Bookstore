@@ -71,16 +71,19 @@ Each app follows separation of concerns and modular architecture.
 
 <h3>⚙️ Installation & Setup </h3>
 <h3>1️⃣ Clone the Repository </h3>
+
 ```
 git clone <your-repo-url>
 cd bookstore
 ```
 <h3>2️⃣ Create Virtual Environment</h3>
+  
 ```
 python -m venv venv
-venv\Scripts\activate  # Windows
+.venv\Scripts\activate  # Windows
 ```
 <h3>3️⃣ Install Dependencies</h3>
+  
 ```
 pip install -r requirements.txt
 ```
@@ -90,15 +93,18 @@ If no requirements file:
 pip install django djangorestframework djangorestframework-simplejwt django-filter
 ```
 <h3>4️⃣ Apply Migrations</h3>
+
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
 <h3>5️⃣ Create Superuser</h3>
+
 ```
 python manage.py createsuperuser
 ```
 <h3>6️⃣ Run Server</h3>
+
 ```
 python manage.py runserver
 ```
@@ -114,10 +120,12 @@ http://127.0.0.1:8000/admin/
 ```
 <h3>🔑 Authentication Flow </h3>
 <h3>Register </h3>
+
 ```
 POST /api/users/register/
 ```
 <h3>Login </h3>
+
 ```
 POST /api/users/login/
 ```
@@ -133,35 +141,44 @@ Attach header:
 Authorization: Bearer <access_token>
 
 <h3>Logout </h3>
-POST /api/users/logout/
 
+```
+POST /api/users/logout/
+```
 <h3>📖 Book APIs </h3>
 <h3>List Books</h3>
+
 ```
 GET /api/books/
 ```
 <h3>Search</h3>
+
 ```
 GET /api/books/?search=harry
 ```
 <h3>Filter</h3>
+
 ```
 GET /api/books/?genre=fiction
 ```
 <h3>Sort</h3>
+
 ```
 GET /api/books/?ordering=price
 ```
 <h3>Pagination</h3>
+
 ```
 GET /api/books/?page=2
 ```
 <h3>🛒 Cart APIs</h3>
 <h3>View Cart</h3>
+
 ```
 GET /api/cart/
 ```
 <h3>Add to Cart</h3>
+
 ```
 POST /api/cart/add/
 ```
@@ -174,11 +191,13 @@ Body:
 }
 ```
 <h3>Remove from Cart</h3>
+
 ```
 POST /api/cart/remove/
 ```
 <h3>📦 Order APIs</h3>
 Place Order</h3>
+
 ```
 POST /api/orders/place/
 ```
@@ -189,11 +208,13 @@ POST /api/orders/place/
 - Uses database transaction
 
 <h3>Order History </h3>
+
 ```
 GET /api/orders/history/
 ```
 <h3>⭐ Review APIs </h3>
 Create Review </h3>
+
 ```
 POST /api/reviews/create/
 ```
@@ -205,6 +226,7 @@ POST /api/reviews/create/
 }
 ```
 <h3>View Reviews for Book </h3>
+
 ```
 GET /api/reviews/<book_id>/
 ```
@@ -252,28 +274,3 @@ This project is for educational and portfolio purposes.
 
 Developed by Yash Lade
 Backend API built using Django REST Framework
-<h1> Online Book Store </h1>
-
-<h1> File Structure </h1>
-
-```
-bookstore/
-├── config/              # project settings
-├── apps/
-│   ├── users/           # auth & profiles
-│   ├── books/           # catalog
-│   ├── cart/            # shopping cart
-│   ├── orders/          # order lifecycle
-│   ├── reviews/         # ratings & reviews
-├── common/              # shared utilities
-└── manage.py
-```
-
-<h2> Standard Cart Stucture </h2>s
-
-
-User
-  └── Cart (OneToOne)
-         └── CartItem (Many)
-                └── Book (ForeignKey)
-<h3> </h3>
